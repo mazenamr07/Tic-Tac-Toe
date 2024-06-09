@@ -1,5 +1,5 @@
 // Things to be done:
-// 1. Replaying method
+// 1. Replaying method needs some love
 // 3. AI Opponent
 
 #include "../include/util.h"
