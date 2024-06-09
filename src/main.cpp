@@ -58,9 +58,9 @@ int main() {
                 }
             }
         }
-        for (int i = 0; i < 3; i += 3) {
-            if (ticArr[i] == ticArr[i + 1]) {
-                if (ticArr[i] == ticArr[i + 2]) {
+        for (int i = 0; i < 3; ++i) {
+            if (ticArr[i * 3] == ticArr[i * 3 + 1]) {
+                if (ticArr[i * 3] == ticArr[i * 3 + 2]) {
                     cout << character << " Won!";
                     exit(0);
                 }
