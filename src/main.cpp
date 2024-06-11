@@ -40,6 +40,7 @@ int main() {
                         "->";
                 getline(cin, choice);
             }
+
             replace(ticArr.begin(), ticArr.end(), choice, character);
             displayArr(ticArr);
             counter++;
