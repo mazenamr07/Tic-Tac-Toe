@@ -27,3 +27,18 @@ string strUpp(string str) {
     }
     return str;
 }
+
+bool checkWin(const vector<string>& ticArr, const string& character) {
+    const vector<vector<int>> winPositions = {
+            {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // Rows
+            {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // Columns
+            {0, 4, 8}, {2, 4, 6}             // Diagonals
+    };
+
+    for (const auto& pos : winPositions) {
+        if (ticArr[pos[0]] == character && ticArr[pos[1]] == character && ticArr[pos[2]] == character) {
+            return true;
+        }
+    }
+    return false;
+}

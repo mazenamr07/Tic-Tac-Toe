@@ -10,5 +10,6 @@ using namespace std;
 bool choiceCheck(const string& choice, const vector<string>& arr);
 void displayArr(vector<string> arr);
 string strUpp(string str);
+bool checkWin(const vector<string>& ticArr, const string& character);
 
 #endif //TIC_TAC_TOE_FUNCTIONS_H

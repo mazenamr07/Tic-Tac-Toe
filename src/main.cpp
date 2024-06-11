@@ -46,54 +46,29 @@ int main() {
             counter++;
 
             // breaking area
-            if (ticArr[0] == ticArr[4]) {
-                if (ticArr[0] == ticArr[8]) {
-                    cout << character << " Won!";
-                    goto SKIP;
-                }
-            }
-            if (ticArr[2] == ticArr[4]) {
-                if (ticArr[2] == ticArr[6]) {
-                    cout << character << " Won!";
-                    goto SKIP;
-                }
-            }
-            for (int i = 0; i < 3; ++i) {
-                if (ticArr[i] == ticArr[i + 3]) {
-                    if (ticArr[i + 3] == ticArr[i + 6]) {
-                        cout << character << " Won!";
-                        goto SKIP;
-                    }
-                }
-            }
-            for (int i = 0; i < 3; ++i) {
-                if (ticArr[i * 3] == ticArr[i * 3 + 1]) {
-                    if (ticArr[i * 3] == ticArr[i * 3 + 2]) {
-                        cout << character << " Won!";
-                        goto SKIP;
-                    }
-                }
+            if (checkWin(ticArr, character)) {
+                cout << character << " Won!\n";
+                break;
             }
             if (counter == 9) {
-                cout << "It's a Draw!";
-                goto SKIP;
+                cout << "It's a Draw!\n";
+                break;
             }
 
-            if (character == "X") {
-                character = "O";
-            } else {
-                character = "X";
-            }
+            character = (character == "X") ? "O" : "X";
         }
-        SKIP:
+
         cout << "\nWanna play again?\n"
                 "Enter 1 to play again,\n"
                 "anything else to exit\n"
                 "->";
+
         string endChoice;
         getline(cin, endChoice);
+
         if (endChoice != "1") {
-            exit(0);
+            break;
         }
     }
+    return 0;
 }
