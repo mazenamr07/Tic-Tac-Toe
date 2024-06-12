@@ -60,19 +60,22 @@ void runGame(string playerMode, string playerCharacter) {
         printf("%s's turn ->", playerCharacter.c_str());
 
         vector<string> ticArr = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        vector<string> usedArr = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
         int counter = 0;
 
         while (true) {
             string slotPlace;
             getline(cin, slotPlace);
 
-            while (!choiceCheck(slotPlace, ticArr)) {
+            while (!choiceCheck(slotPlace, usedArr) or slotPlace.empty()) {
                 printf("%s must enter a number from 1 - 9\n"
                        "->", playerCharacter.c_str());
                 getline(cin, slotPlace);
             }
+            cout << endl;
 
             replace(ticArr.begin(), ticArr.end(), slotPlace, playerCharacter);
+            auto itr = remove(usedArr.begin(), usedArr.end(), slotPlace);
             displayArr(ticArr, playerCharacter);
             counter++;
 

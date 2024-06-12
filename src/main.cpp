@@ -1,5 +1,6 @@
 // Things to be done:
-// 3. AI Opponent
+// 1. Adjust out of range msg
+// 2. AI Opponent
 
 #include "../include/util.h"
 
