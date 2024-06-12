@@ -7,19 +7,20 @@ bool choiceCheck(const string& choice, const vector<string>& arr) {
 void displayArr(vector<string> arr, string playerCharacter) {
     playerCharacter = (playerCharacter == "X") ? "O" : "X";
 
-    cout << "===========\n";
+    cout << "=================\n";
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
-            cout << ' ' << arr[3 * i + j];
+            cout << "  " << arr[3 * i + j] << "  ";
             if (j != 2) {
-                cout << " |";
+                cout << "|";
             }
         }
-        cout << endl;
         if (i == 2) {
-            cout << "===========\n";
+            cout << "\n=================\n";
             printf("%s's turn ->", playerCharacter.c_str());
-
+        }
+        else {
+            cout << "\n-----|-----|-----\n";
         }
     }
 }
@@ -49,11 +50,13 @@ bool checkWin(const vector<string>& ticArr, const string& character) {
 void runGame(string playerMode, string playerCharacter) {
     if (playerMode == "1") { // Another Player
         cout << endl << "Okay now to play choose a number from 1 - 9";
-        cout << endl << "===========\n"
-                        " 1 | 2 | 3 \n"
-                        " 4 | 5 | 6 \n"
-                        " 7 | 8 | 9 \n"
-                        "===========\n";
+        cout << endl << "=================\n"
+                        "  1  |  2  |  3  \n"
+                        "-----|-----|-----\n"
+                        "  4  |  5  |  6  \n"
+                        "-----|-----|-----\n"
+                        "  7  |  8  |  9  \n"
+                        "=================\n";
         printf("%s's turn ->", playerCharacter.c_str());
 
         vector<string> ticArr = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
