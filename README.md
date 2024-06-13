@@ -10,13 +10,12 @@ This project implements the Tic Tac Toe game in C++,
 allowing two players to play against each other in the console.
 
 <!-- Comment
+
+-->
 ## Features
 
 - Simple console-based interface.
 - Supports levels of AI opponents.
--->
-
-
 
 ###### **As i'm still learning, i'd appreciate any tips.**
 
