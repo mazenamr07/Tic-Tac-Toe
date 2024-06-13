@@ -1,8 +1,15 @@
 // Things to be done:
-// 1. Adjust out of range msg
-// 2. AI Opponent
+// 1. Adjust out of possible inputs for arr msg
+// 2. AI Opponent needs some love
 
 #include "../include/util.h"
+
+int mains () {
+    int x;
+    cin >> x;
+    x ^= 1;
+    cout << x;
+}
 
 int main() {
     int counter = 1;
